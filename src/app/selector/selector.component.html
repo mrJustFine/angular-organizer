@@ -1,0 +1,11 @@
+<p>
+  <i class="material-icons">
+    navigate_before
+  </i>
+  <span>
+    {{ dateService.date | async | moment }}
+  </span>
+  <i class="material-icons" (click)="navigate(1)">
+    navigate_next
+  </i>
+</p>
