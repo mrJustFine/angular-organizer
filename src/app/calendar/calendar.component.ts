@@ -13,11 +13,18 @@ interface Week {
   days: Day[]
 }
 
+moment.updateLocale('en', {
+  week: {
+    dow: 1,
+  }
+});
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
+
 export class CalendarComponent implements OnInit {
 
   public calendar: Week[]
@@ -30,10 +37,13 @@ export class CalendarComponent implements OnInit {
     this.dateService.date.subscribe(this.generate.bind(this));
   }
 
+  public selectDay(day: moment.Moment) {
+    this.dateService.changeDate(day);
+  }
+
   private generate(now: moment.Moment) {
     const startDay = now.clone().startOf('month').startOf('week');
     const endDay = now.clone().endOf('month').endOf('week');
-
     const date = startDay.clone().subtract(1, 'day');
     const calendar = [];
 
@@ -45,17 +55,15 @@ export class CalendarComponent implements OnInit {
             const value = date.add(1, 'day').clone();
             const active = moment().isSame(value, 'date');
             const disabled = !now.isSame(value, 'month');
-            const selected = now.isSame(value, 'date')
+            const selected = now.isSame(value, 'date');
+            const weekend = value.isoWeekday() == 6 || value.isoWeekday() == 7;
 
             return {
-              value, active, disabled, selected
+              value, active, disabled, selected, weekend
             }
           })
       })
     }
-
-    console.log(calendar)
     this.calendar = calendar;
   }
-
 }

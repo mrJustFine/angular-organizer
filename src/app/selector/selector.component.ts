@@ -13,7 +13,6 @@ export class SelectorComponent {
   ) { }
 
   public navigate(direction: number) {
-    this.dateService.changeDate(direction);
-    console.log('direction', direction);
+    this.dateService.changeMonth(direction);
   }
 }
