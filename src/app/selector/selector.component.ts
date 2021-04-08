@@ -9,7 +9,7 @@ import { DateService } from '../shared/date.service';
 export class SelectorComponent {
 
   constructor(
-    private dateService: DateService,
+    public dateService: DateService,
   ) { }
 
   public navigate(direction: number) {

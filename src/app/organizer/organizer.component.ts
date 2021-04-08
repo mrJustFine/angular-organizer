@@ -16,7 +16,7 @@ export class OrganizerComponent implements OnInit {
   public tasks: Task[] = [];
 
   constructor(
-    private dateService: DateService,
+    public dateService: DateService,
     private tasksService: TasksService
   ) { }
 
