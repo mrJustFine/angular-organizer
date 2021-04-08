@@ -1,4 +1,7 @@
-# AngOrginizer
+# Angular Orginizer App
+
+Live version:
+https://mrjustfine.github.io/angular-organizer/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
