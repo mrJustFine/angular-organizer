@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ang-orginizer": {
+    "angular-orginizer": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ang-orginizer",
+            "outputPath": "dist/angular-orginizer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ang-orginizer:build"
+            "browserTarget": "angular-orginizer:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ang-orginizer:build:production"
+              "browserTarget": "angular-orginizer:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ang-orginizer:build"
+            "browserTarget": "angular-orginizer:build"
           }
         },
         "test": {
@@ -115,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ang-orginizer:serve"
+            "devServerTarget": "angular-orginizer:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ang-orginizer:serve:production"
+              "devServerTarget": "angular-orginizer:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "ang-orginizer"
+  "defaultProject": "angular-orginizer"
 }
